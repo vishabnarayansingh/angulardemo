@@ -126,6 +126,16 @@
       "app",
       "kebab-case"
     ],
+     "remarkConfig": {
+       "settings": {
+         "emphasis": "*",
+         "strong": "*"
+       },
+       "plugins": [
+         "remark-lint-emphasis-marker",
+          "remark-lint-strong-marker"
+       ]
+     }
     "no-output-on-prefix": true,
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,

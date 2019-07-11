@@ -29,7 +29,7 @@ export class AuthComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("**** ngOninit*****");
+    console.log('***** ngOninit*****');
     this.route.url.subscribe(data => {
       console.log(data);
       // Get the last piece of the URL (it's either 'login' or 'register')
@@ -48,7 +48,7 @@ export class AuthComponent implements OnInit {
     this.errors = {errors: {}};
 
     const credentials = this.authForm.value;
-    console.log(" #### auth credentails");
+    console.log('auth credentails');
     console.log(this.authType);
     console.log(credentials);
     this.userService
