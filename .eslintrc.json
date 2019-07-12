@@ -10,5 +10,4 @@
     "rules": {
         "semi": "error"
     },
-    "quotes": [2, ["backtick", "single"]]
 }
