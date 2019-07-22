@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint --force",
     "e2e": "ng e2e",
-    "codacy-coverage": "npm install codacy-coverage --save"
+    "codacy-coverage": "npm install codacy-coverage --save",
+    "test-with-coverage": "NODE_ENV=test app=1 mocha --require blanket --reporter mocha-lcov-reporter | codacy-coverage"
   },
   "pre-commit": [
     "lint"
