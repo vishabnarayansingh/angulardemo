@@ -5,6 +5,11 @@ pipeline{
 	tools{
 		nodejs "NODEJS_10.16.0"
 	}	
+	environment {
+		CODACY_PROJECT_TOKEN = credentials('CODACY_TAVANT_GITHUB_ANGULAR')
+		CODACY_API_BASE_URL="https://api.codacy.com"
+
+	}
 	
 	options {
 		skipDefaultCheckout true
@@ -24,20 +29,16 @@ pipeline{
 		
 		stage('Prepare') {
 		    steps{
-			   sh "npm install -g yarn"
-    		           sh "yarn install"
-			   sh 'npm install'
+			  sh "npm install -g yarn"
+    		          sh "yarn install"
+			  sh "npm install codacy-coverage --save"
 			}
 		}
 		 stage('Test') {
 		      steps {
-			 sh 'npm test'
+			 //sh 'npm test'
+			   sh "npm run test-with-coverage"
 		      }
 		  } 
-		stage('Build UI') {
-		    steps {
-			sh "npm run"
-		    }
-		}
 	}
 }
