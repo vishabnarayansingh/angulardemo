@@ -33,7 +33,8 @@ pipeline{
     		          sh "yarn install"
 			  sh "npm install codacy-coverage --save"
 			  sh "npm install -g istanbul"
-			  sh "npm install -g jasmine"
+			  //sh "npm install -g jasmine"
+			  sh "npm install jasmine-node -g"
 			  
 			}
 		}
