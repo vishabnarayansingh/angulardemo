@@ -26,12 +26,17 @@ pipeline{
 		    steps{
 			   sh "npm install -g yarn"
     		           sh "yarn install"
+			   sh 'npm install'
 			}
 		}
-
+		 stage('Test') {
+		      steps {
+			 sh 'npm test'
+		      }
+		  } 
 		stage('Build UI') {
 		    steps {
-			sh "npm run test"
+			sh "npm run"
 		    }
 		}
 	}
