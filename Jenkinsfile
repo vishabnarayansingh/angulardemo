@@ -32,6 +32,8 @@ pipeline{
 			  sh "npm install -g yarn"
     		          sh "yarn install"
 			  sh "npm install codacy-coverage --save"
+			  sh "npm install -g istanbul"
+			  
 			}
 		}
 		 stage('Test') {
