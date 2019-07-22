@@ -2,6 +2,10 @@ pipeline{
 	agent{
 		label "master"
 	}
+	tools{
+		nodejs "NODEJS_10.16.0"
+	}	
+	
 	options {
 		skipDefaultCheckout true
 	}
@@ -17,10 +21,10 @@ pipeline{
 				}
 			}
 		}
-		stage('Yarn Install') {
-		    steps {
-			sh "yarn install"
-		    }
+		
+		stage('Prepare') {
+ 		   sh "npm install -g yarn"
+    		  sh "yarn install"
 		}
 
 		stage('Build UI') {
